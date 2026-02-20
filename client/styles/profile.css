@@ -1,0 +1,31 @@
+/* =========================
+   profile.css
+   Profile page styles
+   ========================= */
+
+/* Profile summary boxes (if you render them) */
+.summaryRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+@media (max-width: 900px) {
+  .summaryRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.summaryBox {
+  background: var(--card2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+}
+.summaryBox .num {
+  font-size: 26px;
+  font-weight: 900;
+}
+.summaryBox .label {
+  color: var(--muted);
+  margin-top: 6px;
+}

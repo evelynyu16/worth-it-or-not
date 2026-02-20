@@ -1,0 +1,24 @@
+/* =========================
+   submit.css
+   Submit page styles
+   ========================= */
+
+.page {
+  margin-top: 14px;
+}
+.pageHeader {
+  margin: 18px 0 14px;
+}
+
+.formCard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+
+.formGrid {
+  display: grid;
+  gap: 14px;
+}

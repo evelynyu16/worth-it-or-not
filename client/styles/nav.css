@@ -1,0 +1,168 @@
+/* =========================
+   nav.css
+   NAV (VisionOS-ish, stable)
+   ========================= */
+
+nav.topNav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  background: linear-gradient(to bottom, var(--navGlass), var(--navGlass2));
+  border-bottom: none; /* no extra divider line */
+}
+
+nav.topNav .navInner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 14px var(--pad);
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+}
+
+.navLeft {
+  justify-self: start;
+}
+.navRight {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+}
+.brandTitle {
+  font-family: var(--title-font);
+  font-size: 30px; /* ✅ bigger */
+  font-weight: 900; /* ✅ bolder */
+  letter-spacing: -0.02em;
+  line-height: 1;
+  user-select: none;
+}
+
+html[data-theme="light"] .brandTitle {
+  color: #1d1d1f;
+}
+html[data-theme="dark"] .brandTitle {
+  background: linear-gradient(180deg, #ffffff, #cfd0d6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 10px 28px rgba(255, 255, 255, 0.06);
+}
+
+/* Center pills group */
+.navCenter {
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Each pill (Home/Submit/Profile) */
+a.navPill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: var(--control-h);
+  padding: 0 16px;
+
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--navTile);
+  color: var(--text);
+
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-decoration: none !important;
+
+  transition:
+    transform 140ms ease,
+    background 140ms ease,
+    border-color 140ms ease,
+    box-shadow 140ms ease;
+}
+
+a.navPill:hover {
+  transform: translateY(-1px);
+  background: var(--navTileHover);
+  border-color: rgba(10, 132, 255, 0.3);
+  box-shadow: var(--shadow-soft);
+}
+
+/* ✅ Active should NOT be bright blue */
+a.navPill.active {
+  background: var(--navTileActive);
+  border-color: rgba(10, 132, 255, 0.26);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.12);
+}
+
+html[data-theme="light"] a.navPill.active {
+  background: var(--navTileActive);
+  border-color: rgba(15, 23, 42, 0.14);
+}
+
+/* FIX: allow hover even when active */
+.navPill.active:hover {
+  transform: translateY(-1px);
+  background: color-mix(in srgb, var(--primary) 30%, var(--card2));
+  border-color: color-mix(in srgb, var(--primary) 60%, var(--border));
+}
+
+/* Theme button */
+button.iconBtn {
+  width: var(--control-h);
+  height: var(--control-h);
+  border-radius: 14px;
+  border: 1px solid var(--border);
+
+  background: var(--navTile);
+  color: var(--text);
+
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: var(--shadow-soft);
+  transition:
+    transform 140ms ease,
+    background 140ms ease,
+    border-color 140ms ease;
+}
+
+button.iconBtn:hover {
+  transform: translateY(-1px);
+  background: var(--navTileHover);
+  border-color: rgba(10, 132, 255, 0.35);
+}
+
+button.iconBtn:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+/* Mobile: stack nicely */
+@media (max-width: 720px) {
+  nav.topNav .navInner {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 10px;
+  }
+  .navCenter {
+    grid-column: 1 / -1;
+    justify-self: start;
+    flex-wrap: wrap;
+  }
+  .brandTitle {
+    font-size: 26px;
+  }
+}
