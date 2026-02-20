@@ -4,7 +4,7 @@ Author: Zihan Guo, Fanchao Yu
 Class: CS5610 Web Development  
 Instructor: John Alexis Guerra Gomez  
 
-Live Demo: https://your-deployment-url-here 
+Live Demo: https://youtu.be/keAxlsUxerE?si=wtGs8LpIY0Q1Mbdp
 
 
 Note:
@@ -14,7 +14,7 @@ uploaded images may be deleted after redeploy or restart.
 
 The system automatically detects missing images and displays a fallback image instead.
 
-GitHub Repo: https://github.com/ZihanGuo1204/worth-it-or-not
+GitHub Repo: https://github.com/evelynyu16/worth-it-or-not
 
 ---
 
